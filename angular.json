@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "museumsurfingapp"
+    }
+  },
+  "defaultProject": "museumsurfingapp",
+  "cli": {
+    "analytics": false
+  }
 }
