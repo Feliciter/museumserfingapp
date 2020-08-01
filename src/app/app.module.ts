@@ -9,6 +9,7 @@ import {RouterModule} from '@angular/router';
 import { SearchComponent } from './search/search.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

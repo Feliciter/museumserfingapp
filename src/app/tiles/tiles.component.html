@@ -1,7 +1,9 @@
 
   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-    <app-dropdown></app-dropdown>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light m-4">
+
+        <app-dropdown></app-dropdown>
+      
   
     <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
     <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
@@ -10,13 +12,17 @@
   
     <!-- Step 2: Add the ngbCollapse directive to the element below. -->
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
-      <ul class="navbar-nav">
- 
-        <li class="nav-item">
+  
+       
             <app-search></app-search>
-        </li>
-      </ul>
+            <button type="button" class="btn btn-primary">
+              Fav <span class="badge badge-light">21</span>
+              <span class="sr-only">unread messages</span>
+            </button>
+        
+    
     </div>
+  
   </nav>
 
 
