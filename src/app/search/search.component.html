@@ -4,12 +4,20 @@
 <!-- <form novalidate
 [formGroup]="myform"
 (ngSubmit)="onSubmit()"> -->
-<form class="align-form">
+<form class="align-form px-4">
 
-<input id="typeahead-basic" type="text" class="form-control"  [ngbTypeahead]="search"/>
+ 
 
-<button type="submit"
-          class="btn btn-primary">SEARCH
+        <div class="col-auto">
+
+<input id="typeahead-basic" type="text" class="form-control w-100 p-3 "  [ngbTypeahead]="search"/>
+</div>
+
+
+
+
+<button  type="submit" 
+          class="btn btn-primary mx-2">SEARCH
   </button>
 
 </form>
