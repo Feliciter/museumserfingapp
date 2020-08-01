@@ -7,12 +7,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TilesComponent } from './tiles/tiles.component';
 import {RouterModule} from '@angular/router';
 import { SearchComponent } from './search/search.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TilesComponent,
-    SearchComponent
+    SearchComponent,
+    DropdownComponent
   ],
 
   imports: [
