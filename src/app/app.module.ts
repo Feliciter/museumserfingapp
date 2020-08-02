@@ -1,27 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TilesComponent } from './tiles/tiles.component';
 import {RouterModule} from '@angular/router';
-import { SearchComponent } from './search/search.component';
-import { DropdownComponent } from './dropdown/dropdown.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { MainsectionComponent } from './mainsection/mainsection.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TilesComponent,
-    SearchComponent,
-    DropdownComponent
+    HeaderComponent,
+    MainsectionComponent,
+    FooterComponent
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule,
     RouterModule.forRoot([])
   ],
   providers: [],
