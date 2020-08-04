@@ -27,8 +27,8 @@ export class ApiService {
    // Get CollectionDetails
    sphrase:string='Rembrandt+van+Rijn'
 
-  GetCollection(sphrase='Rembrandt+van+Rijn'): Observable<any> {
-    //let API_URL = `${this.endpoint}/read-recipe/${id}`;
+  GetCollection(sphrase): Observable<any> {
+ 
     let API_URL = `${this.endpoint}collection?key=${this.keyapi}&involvedMaker=${sphrase}`;
 
 

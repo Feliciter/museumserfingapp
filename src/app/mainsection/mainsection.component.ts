@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../shared/api.service';
+import { DataService } from '../shared/data.service';
  
  
 @Component({
@@ -8,22 +9,38 @@ import { ApiService } from '../shared/api.service';
   styleUrls: ['./mainsection.component.scss']
 })
 export class MainsectionComponent implements OnInit {
-
-
-
   datasrc
 
 
-	constructor(private apiService: ApiService) 
+	constructor(
+    private apiService: ApiService,
+    private data: DataService   ) 
   { }
 
+
+  searchphrase:string;
+
+
+
   ngOnInit() {
-		this.apiService.GetCollection().subscribe((data: any[])=>{  
+
+    //test
+    this.data.currentMessage.subscribe(searchphrase=> this.searchphrase = searchphrase)
+
+   // 'Rembrandt+van+Rijn'
+
+   console.log(this.searchphrase)
+
+
+
+		this.apiService.GetCollection(this.searchphrase).subscribe((data: any[])=>{  
 			console.log(data['artObjects']);  
     	this.datasrc = data['artObjects'];
     
     
-		})  
+    })  
+    
+    
 	}
 
 }
