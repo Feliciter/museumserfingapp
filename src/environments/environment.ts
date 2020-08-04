@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://www.rijksmuseum.nl/api/nl/collection',
+  apiUrl: 'https://www.rijksmuseum.nl/api/nl/',
   keyApi: '6bTGB81i'
 
 };

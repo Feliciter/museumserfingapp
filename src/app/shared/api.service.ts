@@ -13,20 +13,35 @@ export class ApiService {
   endpoint =  environment.apiUrl; 
   keyapi =  environment.keyApi; 
 
-  private SERVER_URL = "https://www.rijksmuseum.nl/api/nl/collection?key=6bTGB81i&involvedMaker=Rembrandt+van+Rijn";
-
-  headers = new HttpHeaders()
-  .set('Content-Type', 'application/json')
- 
 
   //  params = new HttpParams()
   // .set('key',this.keyapi);
 
   constructor(private http: HttpClient) { }
 
-  public fetchData(){  
-		return this.http.get(`${this.SERVER_URL}`);  
-	}  
+  // public fetchData(){  
+	// 	//return this.http.get(`${this.SERVER_URL}`);  
+  // }  
+  
+
+   // Get CollectionDetails
+   sphrase:string='Rembrandt+van+Rijn'
+
+  GetCollection(sphrase='Rembrandt+van+Rijn'): Observable<any> {
+    //let API_URL = `${this.endpoint}/read-recipe/${id}`;
+    let API_URL = `${this.endpoint}collection?key=${this.keyapi}&involvedMaker=${sphrase}`;
+
+
+    return this.http.get(API_URL)
+      .pipe(
+        map((res: Response) => {
+          return res || {}
+        }),
+        catchError(this.errorMgmt)
+      )
+  }
+
+
 
  //https://www.rijksmuseum.nl/api/nl/collection?key=6bTGB81i&involvedMaker=Rembrandt+van+Rijn
   // Get Collection 
@@ -37,6 +52,7 @@ export class ApiService {
 
 
   // Get CollectionDetails
+
   // GetCollectionDetails(id): Observable<any> {
   //   let API_URL = `${this.endpoint}/read-recipe/${id}`;
   //   return this.http.get(API_URL, { headers: this.headers })
@@ -52,19 +68,19 @@ export class ApiService {
 
  
 
-  // Error handling 
-  // errorMgmt(error: HttpErrorResponse) {
-  //   let errorMessage = '';
-  //   if (error.error instanceof ErrorEvent) {
-  //     // Get client-side error
-  //     errorMessage = error.error.message;
-  //   } else {
-  //     // Get server-side error
-  //     errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-  //   }
+ // Error handling 
+  errorMgmt(error: HttpErrorResponse) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
     
-  //   return throwError(errorMessage);
-  // }
+    return throwError(errorMessage);
+  }
 
 
 }

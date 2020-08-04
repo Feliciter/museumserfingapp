@@ -10,12 +10,7 @@ import { ApiService } from '../shared/api.service';
 export class MainsectionComponent implements OnInit {
 
 
-  webimage;
-  title;
-  description;
-  category;
-  tags;
-  addinfo;
+
   datasrc
 
 
@@ -23,7 +18,7 @@ export class MainsectionComponent implements OnInit {
   { }
 
   ngOnInit() {
-		this.apiService.fetchData().subscribe((data: any[])=>{  
+		this.apiService.GetCollection().subscribe((data: any[])=>{  
 			console.log(data['artObjects']);  
     	this.datasrc = data['artObjects'];
     
