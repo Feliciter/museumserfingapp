@@ -1,33 +1,36 @@
-import { Component } from '@angular/core';
-import { variable } from '@angular/compiler/src/output/output_ast';
-
+import { Component, Input } from '@angular/core';
+import { ApiService } from './services/api.service';
+import { Collection } from './models/collection';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'museumsurfingapp';
- // searchphrase
- currentFraze;
+ 
+  datasrc: any;
+ //  searchphrase;
 
+ @Input() searchphrase: string;
+  constructor(private apiService: ApiService) {}
 
-  addSearch(searchphrase) {
-    //this.attendees = [...this.attendees, attendee];
-  
-   // const obj={ searchphrase}
+  //  searchphrasee = 'Rembrandt van Rijn';
 
-    //const { searchhword } = obj;
-   // const { searchword }: { searchword: string } = searchphrase;
+  addSearch(searchphrase: string) {
+    // this.currentFraze = searchphrase.searchword;
+    // console.log('APP here', this.currentFraze);
 
+    //test
 
-   this.currentFraze=searchphrase.searchword
-    
+    console.log('app comp ' + this.searchphrase);
 
-    console.log('APP here',this.currentFraze);
+    this.apiService
+      .GetCollection(this.searchphrase)
+      .subscribe((data: any[]) => {
+        console.log(data['artObjects']);
+        this.datasrc = data['artObjects'];
+      });
   }
 }
-
-
-

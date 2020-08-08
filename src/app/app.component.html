@@ -1,3 +1,18 @@
-<app-header (addSearch)="addSearch($event)" ></app-header>
-<app-mainsection [fraze]="currentFraze"></app-mainsection>
+<app-header 
+(addSearch)="addSearch($event)"
+></app-header>
+<!-- <app-mainsection 
+[fraze]="currentFraze"
+(addSearchApi)="addSearch($event)"
+ ></app-mainsection> -->
+
+
+ <!-- test -->
+
+ <app-mainsection   [datasrc]="datasrc"  ></app-mainsection>
+
+
+ <!-- <child-one-component (messageEvent)="receiveMessage($event)"></child1-component>
+    <child-two-component [childMessage]="message"></child2-component> -->
+
 <app-footer></app-footer>

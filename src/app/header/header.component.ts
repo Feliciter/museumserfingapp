@@ -1,7 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-// import { ApiService } from '../shared/api.service';
-// import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-header',
@@ -9,20 +7,16 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent  {
-  @Output()
-  addSearch = new EventEmitter<any>();
+  @Output()  addSearch = new EventEmitter<any>();
 
-  // @Output()
-  // addAttendee = new EventEmitter<any>();
 
   items;
   searchForm;
   datasrc;
   message;
-
+  
   constructor(
-    // private data: DataService,
-    // private apiService: ApiService,
+  
     private formBuilder: FormBuilder
   ) {
     this.searchForm = this.formBuilder.group({
@@ -30,22 +24,16 @@ export class HeaderComponent  {
     });
   }
   onSubmit(value) {
-    // Process  search data here
-    // this.items = this.cartService.clearCart();
-   
-    // const searchphrase = {
-    //   name: 
-     const searchphrase = this.searchForm.value //};
-
-    console.log('Your searh has been submitted', searchphrase);
-
-
+ 
+    const searchphrase = this.searchForm.value 
+    console.log('Your searh has been submitted in header comp', searchphrase);
     this.addSearch.emit(searchphrase);
     //TO DO <any to model>
     // this.addAttendee.emit(attendee);
 
-   // this.searchForm.reset();
+    this.searchForm.reset();
   }
 
+  
 
 }
