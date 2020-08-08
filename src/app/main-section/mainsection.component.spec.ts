@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainsectionComponent } from './mainsection.component';
+import { MainsectionComponent } from './main-section.component';
 
 describe('MainsectionComponent', () => {
   let component: MainsectionComponent;

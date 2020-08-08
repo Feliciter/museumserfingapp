@@ -1,0 +1,75 @@
+{
+    elapsedMilliseconds: number,
+    count: number,
+    countFacets: {
+      hasimage: number,
+      ondisplay: number
+    },
+    artObjects: [
+      {
+        links: {
+          self: string;,
+          web: string;
+        },
+        id: string;,
+        objectNumber: string;,
+        title: string;,
+        hasImage: boolen,
+        principalOrFirstMaker: string;,
+        longTitle: string;,
+        showImage: boolen,
+        permitDownload: boolen,
+        webImage: {
+          guid: <guid>,
+          offsetPercentageX: number,
+          offsetPercentageY: number,
+          width: number,
+          height: number,
+          url: string;
+        },
+        headerImage: {
+          guid: <guid>,
+          offsetPercentageX: number,
+          offsetPercentageY: number,
+          width: number,
+          height: number,
+          url:string;
+        },
+        productionPlaces: <array>
+      },
+      {
+        links: {
+          self: string;,
+          web: string;
+        },
+        id: string;,
+        objectNumber: string;,
+        title: string;,
+        hasImage: boolen,
+        principalOrFirstMaker: string;,
+        longTitle: string;,
+        showImage: string;,
+        permitDownload: string;,
+        webImage: {
+          guid: <guid>,
+          offsetPercentageX: number,
+          offsetPercentageY: number,
+          width: number,
+          height: number,
+          url: string;
+        },
+        headerImage: {
+          guid: <guid>,
+          offsetPercentageX: number,
+          offsetPercentageY: number,
+          width: number,
+          height: number,
+          url: string;
+        },
+        productionPlaces: <array>
+      }
+      
+       
+    ],
+    facets: <array>
+  }

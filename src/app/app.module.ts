@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
-import { MainsectionComponent } from './mainsection/mainsection.component';
+import { MainsectionComponent } from './main-section/main-section.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 

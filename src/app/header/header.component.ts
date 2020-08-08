@@ -1,14 +1,14 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ApiService } from '../shared/api.service';
-import { DataService } from '../shared/data.service';
+// import { ApiService } from '../shared/api.service';
+// import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
   @Output()
   addSearch = new EventEmitter<any>();
 
@@ -21,8 +21,8 @@ export class HeaderComponent implements OnInit {
   message;
 
   constructor(
-    private data: DataService,
-    private apiService: ApiService,
+    // private data: DataService,
+    // private apiService: ApiService,
     private formBuilder: FormBuilder
   ) {
     this.searchForm = this.formBuilder.group({
@@ -47,5 +47,5 @@ export class HeaderComponent implements OnInit {
    // this.searchForm.reset();
   }
 
-  ngOnInit(): void {}
+
 }
