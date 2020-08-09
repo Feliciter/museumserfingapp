@@ -8,9 +8,9 @@ import { Collection } from './models/collection';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'museumsurfingapp';
+  title = 'Rijksmuseum surfing';
  
-  datasrc: any;
+  datasrc = [];
  
 
  //@Input() searchphrase: string;
@@ -27,11 +27,24 @@ export class AppComponent {
 
     console.log('app comp ' + this.searchphrase);
 
+
+
+  
+
     this.apiService
       .GetCollection(this.searchphrase)
       .subscribe((data: any[]) => {
         console.log(data['artObjects']);
         this.datasrc = data['artObjects'];
       });
-  }
+    }
+
+  // ngOnDestroy() {
+  //   if (this.apiService.GetCollection(this.searchphrase).subscription()) {
+  //     this.apiService.GetCollection(this.searchphrase).unsubscribe();
+  //   }    
+  // }
+
+
+
 }

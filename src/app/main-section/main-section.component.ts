@@ -9,12 +9,8 @@ import { Collection } from '../models/collection';
   styleUrls: ['./main-section.component.scss'],
 })
 export class MainsectionComponent implements OnInit {
-  @Input() datasrc: Array<any>;
-  // @Input() searchphrase: any;
+  @Input() datasrc: Collection;
 
- // datasrc: any;
-  //searchphrase: any;
- 
 
   constructor(  ) { }
 
