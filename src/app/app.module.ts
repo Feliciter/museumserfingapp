@@ -10,13 +10,16 @@ import { MainsectionComponent } from './main-section/main-section.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { AppOverlayDirective } from './main-section/app-overlay.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainsectionComponent,
-    FooterComponent
+    FooterComponent,
+    AppOverlayDirective
   ],
 
   imports: [
