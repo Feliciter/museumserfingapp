@@ -1,13 +1,7 @@
 import { Injectable } from '@angular/core';
-
 import { Observable, of } from 'rxjs';
 import { catchError,tap} from 'rxjs/operators';
-
-
-import {
-  HttpClient,
- 
-} from '@angular/common/http';
+import {  HttpClient} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Collection } from '../models/collection';
 
@@ -46,8 +40,8 @@ GetCollection(sphrase: string): Observable<Collection[]> {
   }
   return this.http.get<Collection[]>(`${this.endpoint}collection?key=${this.keyapi}&involvedMaker=${sphrase}`).pipe(
     tap(x => x.length ?
-       console.log(`found heroes matching "${sphrase}"`) :
-       console.log(`no heroes matching "${sphrase}"`)),
+       console.log(`found collection matching "${sphrase}"`) :
+       console.log(`no collection matching "${sphrase}"`)),
     catchError(this.handleError<Collection[]>('Collection[]', []))
   );
 }
