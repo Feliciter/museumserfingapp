@@ -19,18 +19,10 @@ export class AppComponent {
   searchphrase = 'Rembrandt van Rijn';
 
   addSearch(searchphrase: string) {
-    // this.currentFraze = searchphrase.searchword;
-    // console.log('APP here', this.currentFraze);
 
-    //test
+    this.searchphrase=searchphrase
+    console.log('app comp ' +this.searchphrase );
     
-
-    console.log('app comp ' + this.searchphrase);
-
-
-
-  
-
     this.apiService
       .GetCollection(this.searchphrase)
       .subscribe((data: any[]) => {

@@ -22,7 +22,7 @@ export class HeaderComponent {
   onSubmit(value) {
     const searchphrase = this.searchForm.value;
     console.log('Your searh has been submitted in header comp', searchphrase);
-    this.addSearch.emit(searchphrase);
+    this.addSearch.emit(searchphrase.searchword);
     //TO DO use model
 
     this.searchForm.reset();
