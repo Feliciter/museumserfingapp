@@ -13,16 +13,20 @@ export class AppOverlayDirective {
 @HostListener('click') onClick() {
     window.alert('Host Element Clicked');
 }
-@HostListener('mouseleave') onMouseLeave() {
-    this.ChangeBgColor('black');
-}
-ChangeBgColor(color: string) {
-    this.renderer.setStyle(this.el.nativeElement, 'color', color);
-}
+// @HostListener('mouseleave') onMouseLeave() {
+//     this.ChangeBgColor('black');
+// }
+// ChangeBgColor(color: string) {
+//     this.renderer.setStyle(this.el.nativeElement, 'color', color);
+// }
 
 @HostBinding('style.border') border: string;
 @HostListener('mouseover') onMouseOver() {
 this.border = '5px solid green';
 }
+
+@HostListener('mouseleave') onMouseLeave() {
+  this.border = 'unset';
+  }
 
 }
