@@ -20,7 +20,7 @@ export class AppComponent {
 
   addSearch(searchphrase: string) {
 
-    this.searchphrase=searchphrase
+    this.searchphrase=searchphrase= 'Rembrandt van Rijn';
     console.log('app comp ' +this.searchphrase );
     
     this.apiService
