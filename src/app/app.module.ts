@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppOverlayDirective } from './main-section/app-overlay.directive';
+import { PopupModalComponent } from './popup-modal/popup-modal.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AppOverlayDirective } from './main-section/app-overlay.directive';
     HeaderComponent,
     MainsectionComponent,
     FooterComponent,
-    AppOverlayDirective
+    AppOverlayDirective,
+    PopupModalComponent
   ],
 
   imports: [
@@ -31,7 +33,8 @@ import { AppOverlayDirective } from './main-section/app-overlay.directive';
     RouterModule.forRoot([])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PopupModalComponent]
 })
 export class AppModule { }
 

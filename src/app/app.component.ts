@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { ApiService } from './services/api.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { Collection } from './models/collection';
+
+import { PopupModalComponent } from './popup-modal/popup-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +17,9 @@ export class AppComponent {
  
 
  //@Input() searchphrase: string;
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private modalService: NgbModal) {}
 
   searchphrase = 'Rembrandt van Rijn';
 
@@ -30,6 +35,9 @@ export class AppComponent {
         this.datasrc = data['artObjects'];
       });
     }
+
+
+
 
   // ngOnDestroy() {
   //   if (this.apiService.GetCollection(this.searchphrase).subscription()) {

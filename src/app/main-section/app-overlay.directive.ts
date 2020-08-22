@@ -14,9 +14,9 @@ export class AppOverlayDirective {
     // this.ChangeBgColor('red');
   }
 
-  @HostListener('click') onClick() {
-    window.alert('Host Element Clicked');
-  }
+  // @HostListener('click') onClick() {
+  //   window.alert('Host Element Clicked');
+  // }
 
   @HostBinding('style.border') border: string;
 
