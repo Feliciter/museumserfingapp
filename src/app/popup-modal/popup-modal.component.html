@@ -5,8 +5,14 @@
     </button>
   </div>
   <div class="modal-body">
-    <p>Hello, {{name}}!</p>
+    <p>Hello, {{item.objectNumber}}!</p>
+    <div><p>{{item.title}}</p></div>
+    <div><p>{{item.longTitle}}</p></div>
+    <div><p>{{item.headerImage.url}}</p></div>
+    <div><p>{{item.objectNumber}}</p></div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
   </div>
+
+

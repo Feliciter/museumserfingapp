@@ -12,21 +12,15 @@ import { PopupModalComponent } from '../popup-modal/popup-modal.component';
 export class MainsectionComponent implements OnInit {
   @Input() datasrc: Collection;
 
+  constructor(private modalService: NgbModal) {}
 
-  constructor(    private modalService: NgbModal ) { }
-
-  open() {
-    const modalRef = this.modalService.open(PopupModalComponent, { size: 'sm' });
+  open(item) {
+    const modalRef = this.modalService.open(PopupModalComponent, {
+      size: 'lg',
+    });
     modalRef.componentInstance.name = 'World';
-    // modalRef.result.then((result) => {
-    //   if (result) {
-    //     this.truckService.addTruck(result);
-
-    //   }
-    // });
+    modalRef.componentInstance.item = item;
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 }
