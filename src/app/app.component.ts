@@ -21,11 +21,12 @@ export class AppComponent {
     private apiService: ApiService,
     private modalService: NgbModal) {}
 
-  searchphrase = 'Rembrandt van Rijn';
+  searchphrase ;
 
   addSearch(searchphrase: string) {
 
-    this.searchphrase=searchphrase= 'Rembrandt van Rijn';
+    //draft this.searchphrase=searchphrase= 'Rembrandt van Rijn';
+    this.searchphrase=searchphrase;
     console.log('app comp ' +this.searchphrase );
     
     this.apiService

@@ -38,7 +38,10 @@ GetCollection(sphrase: string): Observable<Collection[]> {
     // if not search term, return empty hero array.
     return of([]);
   }
-  return this.http.get<Collection[]>(`${this.endpoint}collection?key=${this.keyapi}&involvedMaker=${sphrase}`)
+ // return this.http.get<Collection[]>(`${this.endpoint}collection?key=${this.keyapi}&involvedMaker=${sphrase}`)
+
+  return this.http.get<Collection[]>(`${this.endpoint}collection?key=${this.keyapi}&q=${sphrase}`)
+  
   .pipe(
     tap(x => x.length ?
        console.log(`found collection matching "${sphrase}"`) :
